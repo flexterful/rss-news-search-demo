@@ -1,0 +1,64 @@
+@import "@/styles/abstracts/mixins";
+@import "@/styles/abstracts/variables";
+
+.news-cards {
+  @include flex-center;
+  flex-direction: column;
+  padding-top: 20px;
+
+  .news-card {
+    border: 1px solid #ddd;;
+    padding: 20px 40px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);;
+    width: $card-width;
+
+    .item-link > img {
+      width: 100%;
+    }
+
+    .news-footer {
+      display: flex;
+      justify-content: space-between;
+
+      .news-source, .news-date {
+        align-items: start;
+        font-size: 14px;
+        margin-right: 10px;
+        text-decoration: none;
+        padding: 0;
+      }
+
+      .news-source {
+        color: rgb(255, 124, 51);
+      }
+
+      .news-date {
+        color: rgb(153, 153, 153);
+      }
+    }
+
+    .news-description {
+      font-size: 16px;;
+      color: #333;
+      margin-bottom: 20px;
+
+      & > font {
+        display: none;
+      }
+
+      & > a {
+        color: rgb(66, 66, 66);
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 27px;
+        margin-bottom: 8px;
+        max-width: calc(100% - 38px);
+        text-decoration: none;
+        width: 100%;
+        word-break: break-word;
+      }
+    }
+  }
+}

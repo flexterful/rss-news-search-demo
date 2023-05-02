@@ -1,6 +1,7 @@
 # docker-compose.yml
 version: '3'
 services:
+  # Plain PHP RSS news API
   backend:
     build:
       context: ./backend
@@ -9,3 +10,12 @@ services:
       - "8000:8000"
     volumes:
       - ./backend:/app/backend
+  # Vue.js news search app
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "9000:9000"
+    volumes:
+      - ./frontend:/app/frontend

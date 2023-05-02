@@ -1,0 +1,10 @@
+@import "@/styles/abstracts/_variables.scss";
+
+#app {
+  font-family: $app-font-family;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #424242;
+  margin-top: 60px;
+}

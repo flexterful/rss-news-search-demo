@@ -1,0 +1,59 @@
+@import "@/styles/abstracts/variables";
+
+@mixin search-header {
+  .search-header-container {
+    display: flex;
+    justify-content: space-between;
+
+    .search-header {
+      color: rgb(66, 66, 66);
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 22px;
+      letter-spacing: 0.15px;
+      font-family: $app-font-family
+    }
+
+    .language-selector {
+      background-color: transparent;
+      outline: 0;
+      border: 0;
+      cursor: pointer;
+      user-select: none;
+      vertical-align: middle;
+      appearance: none;
+      font-family: $app-font-family;
+      align-items: center;
+      position: relative;
+      text-decoration: none;
+      box-sizing: border-box;
+      white-space: nowrap;
+      color: rgb(102, 102, 102);
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 14px;
+      letter-spacing: 0.5px;
+      line-height: 22px;
+      padding-top: 20px;
+
+      .arrow-icon {
+        user-select: none;
+        width: 1em;
+        height: 1em;
+        display: inline-block;
+        fill: currentColor;
+        flex-shrink: 0;
+        transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+        right: 0;
+        pointer-events: none;
+        font-size: 16px;
+        top: calc(50% - 7px);
+        color: #8899A6;
+      }
+
+      & .dropdown-open > .arrow-icon {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}

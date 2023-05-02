@@ -1,0 +1,10 @@
+@import "@/styles/abstracts/variables";
+
+.nothing-found-message {
+  color: #808080;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 22px;
+  letter-spacing: .15px;
+  font-family: $app-font-family;
+}
