@@ -1,0 +1,18 @@
+# Ignore the vendor directory created by Composer
+/vendor/
+
+# Ignore composer.lock which records the exact version of dependencies installed
+composer.lock
+
+# local env files
+.env.local
+.env.*.local
+
+# Ignore the logs directory
+/logs/
+
+# Ignore the build directory created by any build tools
+/build/
+
+# Ignore CS fixer cache
+.php-cs-fixer.cache

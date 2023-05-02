@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<ruleset name="MyProject">
+    <description>PHP_CodeSniffer configuration using PSR12.</description>
+
+    <!-- Run against the PSR12 standard -->
+    <rule ref="PSR12"/>
+
+    <!-- Ignore warnings, show only errors -->
+    <arg value="n"/>
+
+    <!-- Show progress -->
+    <arg value="p"/>
+
+    <!-- Colors in the output -->
+    <arg name="colors"/>
+
+    <!-- Paths to ignore -->
+    <exclude-pattern>*/tests/*</exclude-pattern> <!-- Update this as needed -->
+</ruleset>
