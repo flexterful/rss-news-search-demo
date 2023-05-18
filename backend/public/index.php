@@ -32,4 +32,3 @@ $router->add('/news/google', function() use ($request) {
 
 // Start the router
 $router->run();
-

@@ -3,7 +3,7 @@
 namespace App\Services\Google;
 
 use Exception;
-use GuzzleHttp\Client;
+use GuzzleHttp\Client as GuzzleClient;
 use GuzzleHttp\Exception\GuzzleException;
 use Psr\Http\Message\ResponseInterface;
 use SimpleXMLElement;
@@ -11,9 +11,9 @@ use SimpleXMLElement;
 class GoogleNewsService
 {
     /**
-     * @var Client
+     * @var GuzzleClient
      */
-    private Client $client;
+    private GuzzleClient $guzzleClient;
 
     /**
      * @var string
@@ -21,7 +21,7 @@ class GoogleNewsService
     private string $googleNewsBaseUrl;
 
     /**
-     * GoogleNewsProxy constructor
+     * GoogleNewsService constructor
      */
     public function __construct(GuzzleClient $guzzleClient)
     {
@@ -45,7 +45,7 @@ class GoogleNewsService
         $country = mb_strtoupper($language);
 
         // Send a GET request to the Google News API with the given keywords and language
-        $response = $this->client->get($this->googleNewsBaseUrl, [
+        $response = $this->guzzleClient->get($this->googleNewsBaseUrl, [
             'query' => [
                 'q' => $keywords,
                 'hl' => $language,
