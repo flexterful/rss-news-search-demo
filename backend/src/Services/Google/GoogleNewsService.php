@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Services\Proxies\Google;
+namespace App\Services\Google;
 
 use Exception;
 use GuzzleHttp\Client;
@@ -8,7 +8,7 @@ use GuzzleHttp\Exception\GuzzleException;
 use Psr\Http\Message\ResponseInterface;
 use SimpleXMLElement;
 
-class GoogleNewsProxy
+class GoogleNewsService
 {
     /**
      * @var Client
@@ -23,9 +23,9 @@ class GoogleNewsProxy
     /**
      * GoogleNewsProxy constructor
      */
-    public function __construct()
+    public function __construct(GuzzleClient $guzzleClient)
     {
-        $this->client = new Client();
+        $this->guzzleClient = $guzzleClient;
         $this->googleNewsBaseUrl = $_ENV['GOOGLE_NEWS_URL'] ?? '';
     }
 

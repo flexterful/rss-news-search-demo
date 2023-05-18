@@ -5,20 +5,20 @@ namespace App\Controller\News;
 use App\Enum\News\NewsRequestParams;
 use App\Kernel\Request;
 use App\Kernel\Response;
-use App\Services\Proxies\Google\GoogleNewsProxy;
+use App\Services\Google\GoogleNewsService;
 use Exception;
 use GuzzleHttp\Exception\GuzzleException;
 
 // Class responsible for handling Google News RSS requests
 class GoogleNewsController
 {
-    // GoogleNewsProxy service for interacting with the Google News RSS feed
-    private GoogleNewsProxy $googleNewsProxy;
+    // GoogleNewsService for interacting with the Google News RSS feed
+    private GoogleNewsService $googleNewsProxy;
 
-    // Constructor: Initialize the GoogleNewsProxy service
-    public function __construct()
+    // GoogleNewsController constructor
+    public function __construct(GoogleNewsService $googleNewsService)
     {
-        $this->googleNewsProxy = new GoogleNewsProxy();
+        $this->googleNewsProxy = $googleNewsService;
     }
 
     /**

@@ -3,6 +3,7 @@
 require '../vendor/autoload.php';
 
 use App\Controller\News\GoogleNewsController;
+use App\Kernel\ObjectFactory;
 use App\Kernel\Request;
 use App\Kernel\Response;
 use App\Kernel\Router;
@@ -25,7 +26,7 @@ $router->add('/', function() {
 
 // Google News RSS request
 $router->add('/news/google', function() use ($request) {
-    $googleNewsController =  new GoogleNewsController();
+    $googleNewsController =  ObjectFactory::createInstance(GoogleNewsController::class);
     $googleNewsController->index($request);
 });
 
